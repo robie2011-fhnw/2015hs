@@ -6,17 +6,20 @@ import static org.junit.Assert.assertNotNull;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import edu.spring.domain.MessageProvider;
 import edu.spring.domain.MessageRenderer;
 
 @RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration(classes={edu.spring.domain.MessageConfig.class})
 public class HelloWorldJavaTest {
-	@Autowired
+
+    @Autowired
 	private MessageProvider messageProvider;
 	
-	@Autowired
+    @Autowired
 	private MessageRenderer messageRenderer;
 	
 	@Test
