@@ -9,14 +9,16 @@
 	http://www.springframework.org/schema/context/spring-context-4.2.xsd
 	">
 	
-	<context:property-placeholder location="classpath:app.properties"/>
+	<context:property-placeholder location="classpath:app.properties" />
 	
  
 	<bean id="renderer" class="edu.spring.renderer.ConsoleRenderer">
-		<property name="messageProvider" ref="extMessage" />
+		<property name="messageProvider"  ref="extMessage"  />
 	</bean>
 	
-	<bean id="provider" class="edu.spring.messageProvider.HelloMessageProvider" />
+	<!-- Default Scope: Singleton -->
+	<bean class="edu.spring.messageProvider.HelloMessageProvider" scope="singleton" />
+	<bean class="edu.spring.messageProvider.HelloMessageProvider" scope="singleton" />
 	
 	<bean id="extMessage" class="edu.spring.messageProvider.ExternalizedHelloWorldMessageProvider">
 		<property name="message" value="${helloworld.message}"></property>

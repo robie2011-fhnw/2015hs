@@ -28,6 +28,7 @@ public class HelloWorld {
 		mr.render();
 	}
 	
+	// For usage of PlaceHolder
 	public static void loadWithApplicationContext(){
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("helloConfig.xml");
 		Renderer mr = (Renderer) context.getBean("renderer");
